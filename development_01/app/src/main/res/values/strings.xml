@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">development_01</string>
+    <string name="email_address">Email Address</string>
+    <string name="password" />
+    <string name="employer">Employer</string>
+    <string name="employee">Employee</string>
+    <string name="register_screen">Register Screen</string>
+    <string name="name">User Name</string>
+    <string name="signup">Sign Up</string>
+    <string name="EMPTY_EMAIL">Please enter an email address</string>
+    <string name="INVALID_EMAIL">Please enter a valid Email Address</string>
+    <string name="EMPTY_PASSWORD">Password can not be empty</string>
+    <string name="INVALID_PASSWORD">Please enter a Strong password</string>
+    <string name="EMPTY_ROLE">"Please select a role "</string>
+    <string name="VALID_EMAIL">Complete Email</string>
+    <string name="EMPTY_USERNAME">Please enter a User Name</string>
+    <string name="STRONG_PASSWORD">Password is Valid</string>
+    <string name="SIGN_IN">Sign in</string>
+    <string name="JOB_HEAD">Post a New Job</string>
+    <string name="JOB_DETAILS">Add Job Overview</string>
+    <string name="JOB_DESCRIPT">Description:</string>
+    <string name="JOB_DESCRIPT_HINT">Describe the role, responsibilities, and expectations…</string>
+    <string name="JOB_PAY">Pay (CAD) *</string>
+    <string name="JOB_TAGS">Tags *</string>
+    <string name="ADD_TAG">e.g. full-time, outdoor, contract</string>
+    <string name="TAG_TEXT">Separate tags with a comma  e.g. full-time, indoor, remote</string>
+    <string name="PUBLISH">PUBLISH JOB</string>
+    <string name="ADD_DESCRIPT">Description *</string>
+    <string name="EMPLOYER">Employer</string>
+    <string name="ADD_PAY">0.00</string>
+    <string name="JOB_TITLE">Job Title *</string>
+    <string name="JOB_TITLE_HINT">e.g. Software Developer Intern</string>
+    <string name="JOB_LOCATION">Location *</string>
+    <string name="ADD_LOCATION">e.g 1234 University Avenue, Halifax NS, XXX XXX</string>
+    <string name="resume_success">Resume attached successfully!</string>
+    <string name="companyTitleName">e.g. Google, Meta, OpenAI</string>
+    <string name="COMPANY_NAME">Company Name *</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <!-- Employer Job View Strings -->
+    <string name="my_job_postings">My Job Postings</string>
+    <string name="no_jobs_posted">You haven\'t posted any jobs yet.</string>
+    <string name="pay_format">$%.2f</string>
+    <string name="location_format">Location: %1$s</string>
+    <string name="no_applications_message">No applications have been submitted for this position yet</string>
+    <string name="applied_format">Applied: %1$s</string>
+    <string name="resume_header_format">Resume: %1$s</string>
+    <string name="resume_link_format">Resume Link: %1$s\n\nClick the download button to save the file.</string>
+    <string name="no_resume_available">No resume link available for this application.</string>
+    <string name="downloading_resume">Downloading Resume</string>
+    <string name="downloading_resume_desc">Downloading resume for %1$s</string>
+
+    <!-- Dashboard Strings -->
+    <string name="employee_dashboard">Employee Dashboard</string>
+    <string name="employer_dashboard">Employer Dashboard</string>
+    <string name="label_user_name">User Name:</string>
+    <string name="label_email">Email:</string>
+    <string name="label_rating">Rating:</string>
+    <string name="btn_search_jobs">Search Jobs</string>
+    <string name="btn_view_map">View Jobs on Map</string>
+    <string name="btn_preferred_jobs">Preferred Jobs</string>
+    <string name="btn_earnings">Earnings</string>
+    <string name="btn_payment_settings">Payment Settings</string>
+    <string name="btn_logout">Log Out</string>
+
+    <string name="btn_post_job">Post jobs</string>
+    <string name="btn_view_applications">View Jobs</string>
+    <string name="btn_view_favorites">View Favorites</string>
+    <string name="btn_pay_employees">Pay Employees</string>
+    <string name="btn_rate_worker">Rate Worker</string>
+</resources>

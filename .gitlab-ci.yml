@@ -1,0 +1,84 @@
+stages:
+  - build
+  - test
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "develop"'
+      when: always
+    - when: never
+
+default:
+  image: eclipse-temurin:21-jdk
+  before_script:
+    - export GRADLE_USER_HOME="$CI_PROJECT_DIR/development_01/.gradle"
+    - export ANDROID_SDK_ROOT="$CI_PROJECT_DIR/development_01/android-sdk"
+    - cd development_01
+    - chmod +x ./gradlew
+    - echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+    - cat local.properties
+
+variables:
+  ANDROID_COMPILE_SDK: "36"
+  ANDROID_BUILD_TOOLS: "35.0.0"
+  ANDROID_SDK_TOOLS: "11076708"
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+  GRADLE_USER_HOME: "$CI_PROJECT_DIR/development_01/.gradle"
+
+cache:
+  key: "${CI_COMMIT_REF_SLUG}"
+  paths:
+    - development_01/.gradle/wrapper
+    - development_01/.gradle/caches
+    - development_01/android-sdk
+    - development_01/gradle/wrapper/
+
+.setup_android_sdk: &setup_android_sdk
+  - set -x
+  - apt-get update
+  - apt-get install -y wget unzip lib32stdc++6 lib32z1
+  - mkdir -p "$ANDROID_SDK_ROOT/cmdline-tools"
+  - wget -q "https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip" -O cmdline-tools.zip
+  - unzip -q cmdline-tools.zip -d "$ANDROID_SDK_ROOT/cmdline-tools"
+  - rm -rf "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+  - mv "$ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools" "$ANDROID_SDK_ROOT/cmdline-tools/latest"
+  - export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+  - java -version
+  - sdkmanager --version
+  - yes | sdkmanager --licenses > /dev/null || true
+  - sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" "build-tools;${ANDROID_BUILD_TOOLS}" "platform-tools"
+
+build_debug:
+  stage: build
+  script:
+    - echo "=== START SDK SETUP ==="
+    - *setup_android_sdk
+    - echo "=== SDK SETUP FINISHED ==="
+    - echo "=== START GRADLE BUILD ==="
+    - ./gradlew --no-daemon clean assembleDebug
+    - echo "=== GRADLE BUILD FINISHED ==="
+    - echo "=== CURRENT DIRECTORY ==="
+    - pwd
+    - echo "=== APK FILES ==="
+    - find . -type f | grep ".apk" || true
+    - echo "=== ALL BUILD OUTPUTS ==="
+    - find app/build -type f || true
+
+junit_tests:
+  stage: test
+  script:
+    - echo "=== START SDK SETUP ==="
+    - *setup_android_sdk
+    - echo "=== SDK SETUP FINISHED ==="
+    - echo "=== START UNIT TESTS ==="
+    - ./gradlew --no-daemon testDebugUnitTest
+    - echo "=== UNIT TESTS FINISHED ==="
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - development_01/app/build/test-results/testDebugUnitTest/*.xml
+    paths:
+      - development_01/app/build/reports/tests/testDebugUnitTest/
+      - development_01/app/build/test-results/testDebugUnitTest/
+    expire_in: 7 days

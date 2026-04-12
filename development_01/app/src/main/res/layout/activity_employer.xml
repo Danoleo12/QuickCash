@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/employer_role"
+        android:layout_width="182dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginEnd="148dp"
+        android:text="Employer Dashboard"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="41dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/fixedEmployerName"
+        android:layout_width="116dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:text="User Name"
+        app:layout_constraintTop_toBottomOf="@+id/employer_role"
+        tools:layout_editor_absoluteX="9dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/fixedEmployerEmail"
+        android:layout_width="116dp"
+        android:layout_height="30dp"
+
+        android:layout_marginTop="20dp"
+        android:text="User Email"
+        app:layout_constraintTop_toBottomOf="@+id/fixedEmployerName"
+        tools:layout_editor_absoluteX="9dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/employerLogOut"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="596dp"
+        android:text="Log Out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_role" />
+
+    <TextView
+        android:id="@+id/employerEmail"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/fixedEmployerEmail"
+        app:layout_constraintTop_toBottomOf="@+id/employerName" />
+
+    <TextView
+        android:id="@+id/employerName"
+        android:layout_width="225dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/fixedEmployerName"
+        app:layout_constraintTop_toBottomOf="@+id/employer_role" />
+
+    <Button
+        android:id="@+id/addJob"
+        android:layout_width="140dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="300dp"
+        android:text="Post jobs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fixedEmployerEmail" />
+
+    <Button
+        android:id="@+id/seeAppls"
+        android:layout_width="151dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="20dp"
+        android:text="View Jobs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toEndOf="@+id/addJob"
+        app:layout_constraintTop_toBottomOf="@+id/employerEmail" />
+
+    <Button
+        android:id="@+id/btnPayPal"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:text="PayPal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addJob" />
+
+    <Button
+        android:id="@+id/viewFavorites"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/btn_view_favorites"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPayPal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

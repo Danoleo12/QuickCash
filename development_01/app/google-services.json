@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "120989215026",
+    "firebase_url": "https://group3quickcash-default-rtdb.firebaseio.com/",
+    "project_id": "group3quickcash",
+    "storage_bucket": "group3quickcash.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120989215026:android:a17f417a9b47fb2a3f8f2b",
+        "android_client_info": {
+          "package_name": "com.example.development_01"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "REPLACE_WITH_YOUR_FIREBASE_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
